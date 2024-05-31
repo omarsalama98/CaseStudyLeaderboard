@@ -6,7 +6,7 @@ const TableHeader = (props: {
   cell_weights: number[];
 }) => {
   return props.column_titles.length > 0 ? (
-    <View style={[styles.container]}>
+    <View style={styles.container}>
       {props.column_titles.map((title, index) => {
         return (
           <View
@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     backgroundColor: 'rgb(255, 255, 100)',
-    borderBottomWidth: 1,
   },
   cell: {
     justifyContent: 'center',

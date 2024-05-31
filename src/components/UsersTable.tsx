@@ -51,6 +51,6 @@ export default UsersTable;
 
 const styles = StyleSheet.create({
   container: {
-    borderTopWidth: 1,
+    borderWidth: 1,
   },
 });

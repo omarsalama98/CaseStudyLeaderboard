@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     backgroundColor: 'rgb(240, 255, 240)',
-    borderBottomWidth: 1,
+    borderTopWidth: 1,
   },
   cell: {
     justifyContent: 'center',
@@ -50,11 +50,11 @@ const styles = StyleSheet.create({
     borderEndWidth: 1,
   },
   cell_text: {
-    fontSize: 20,
+    fontSize: 18,
     color: 'black',
   },
   highlighted_cell_text: {
-    fontSize: 20,
+    fontSize: 18,
     color: 'red',
   },
 });
