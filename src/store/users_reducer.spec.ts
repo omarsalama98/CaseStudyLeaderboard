@@ -8,32 +8,75 @@ describe('usersReducer reducer', () => {
     expect(usersReducer(undefined, {type: 'None'})).toEqual({
       ranked_users: ranked_users,
       sorted_users: undefined,
+      sort_by: {field: 'bananas', type: 'desc'},
     });
   });
 
-  it('should handle sort by name', () => {
+  it('should handle sort by name ascendingly', () => {
     const ranked_users = rankUsers(Object.values(users_data));
-    const sorted_users = sortUsers(ranked_users, 'name');
+    const sorted_users = sortUsers(ranked_users, {
+      field: 'name',
+      type: 'asc',
+    });
     expect(
       usersReducer(undefined, {
-        type: 'sortUsers/name',
+        type: 'sortUsers/name:asc',
       }),
     ).toEqual({
       ranked_users: ranked_users,
       sorted_users: sorted_users,
+      sort_by: {field: 'name', type: 'asc'},
     });
   });
 
-  it('should handle sorting by bananas', () => {
+  it('should handle sort by name descendingly', () => {
     const ranked_users = rankUsers(Object.values(users_data));
-    const sorted_users = sortUsers(ranked_users, 'bananas');
+    const sorted_users = sortUsers(ranked_users, {
+      field: 'name',
+      type: 'desc',
+    });
     expect(
       usersReducer(undefined, {
-        type: 'sortUsers/bananas',
+        type: 'sortUsers/name:desc',
       }),
     ).toEqual({
       ranked_users: ranked_users,
       sorted_users: sorted_users,
+      sort_by: {field: 'name', type: 'desc'},
     });
+  });
+
+  it('should handle sorting by bananas ascendinlgy', () => {
+    const ranked_users = rankUsers(Object.values(users_data));
+    const sorted_users = sortUsers(ranked_users, {
+      field: 'bananas',
+      type: 'asc',
+    });
+    expect(
+      usersReducer(undefined, {
+        type: 'sortUsers/bananas:asc',
+      }),
+    ).toEqual({
+      ranked_users: ranked_users,
+      sorted_users: sorted_users,
+      sort_by: {field: 'bananas', type: 'asc'},
+    });
+  });
+});
+
+it('should handle sorting by bananas descendinlgy', () => {
+  const ranked_users = rankUsers(Object.values(users_data));
+  const sorted_users = sortUsers(ranked_users, {
+    field: 'bananas',
+    type: 'desc',
+  });
+  expect(
+    usersReducer(undefined, {
+      type: 'sortUsers/bananas:desc',
+    }),
+  ).toEqual({
+    ranked_users: ranked_users,
+    sorted_users: sorted_users,
+    sort_by: {field: 'bananas', type: 'desc'},
   });
 });
