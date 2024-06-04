@@ -21,10 +21,7 @@ const UsersTable = (props: {
 
   return props.table_entries.length > 0 ? (
     <View style={styles.container}>
-      <TableHeader
-        column_titles={['Name', 'Rank', 'Number of Bananas']}
-        cell_weights={CELL_WEIGHTS}
-      />
+      <TableHeader cell_weights={CELL_WEIGHTS} />
 
       {props.table_entries.map((user_entry, index) => {
         return (

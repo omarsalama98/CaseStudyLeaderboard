@@ -1,15 +1,24 @@
 export type action_type = {
-  type: 'sortUsers/name' | 'sortUsers/bananas' | 'None';
+  type:
+    | 'sortUsers/name:asc'
+    | 'sortUsers/name:desc'
+    | 'sortUsers/bananas:asc'
+    | 'sortUsers/bananas:desc'
+    | 'None';
 };
 
-export const sortUsersByName = (): action_type => {
+export const sortUsersByName = (
+  sort_type: 'asc' | 'desc' = 'asc',
+): action_type => {
   return {
-    type: 'sortUsers/name',
+    type: `sortUsers/name:${sort_type}`,
   };
 };
 
-export const sortUsersByBananas = (): action_type => {
+export const sortUsersByBananas = (
+  sort_type: 'asc' | 'desc' = 'desc',
+): action_type => {
   return {
-    type: 'sortUsers/bananas',
+    type: `sortUsers/bananas:${sort_type}`,
   };
 };
