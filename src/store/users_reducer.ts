@@ -1,6 +1,5 @@
 import {rankUsers, sortUsers, sort_by_type} from '../data/users_data_helper';
-import {RankedUser} from '../features/Leaderboard/types';
-import {action_type} from './actions';
+import {RankedUser, action_type} from '../features/Leaderboard/types';
 
 const users_data = require('../data/leaderboard.json');
 

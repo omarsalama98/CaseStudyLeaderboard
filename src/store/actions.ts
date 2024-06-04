@@ -1,11 +1,4 @@
-export type action_type = {
-  type:
-    | 'sortUsers/name:asc'
-    | 'sortUsers/name:desc'
-    | 'sortUsers/bananas:asc'
-    | 'sortUsers/bananas:desc'
-    | 'None';
-};
+import {action_type} from '../features/Leaderboard/types';
 
 export const sortUsersByName = (
   sort_type: 'asc' | 'desc' = 'asc',
