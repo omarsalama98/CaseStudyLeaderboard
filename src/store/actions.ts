@@ -1,5 +1,5 @@
 export type action_type = {
-  type: 'sortUsers/name' | 'sortUsers/bananas';
+  type: 'sortUsers/name' | 'sortUsers/bananas' | 'None';
 };
 
 export const sortUsersByName = (): action_type => {
